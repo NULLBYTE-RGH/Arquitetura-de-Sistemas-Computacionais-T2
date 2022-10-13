@@ -3,7 +3,7 @@
 * Feita em React com bootstrap
 ![alt text](https://github.com/NULLBYTE-RGH/Arquitetura-de-Sistemas-Computacionais-T2/blob/92e824de3a616be7479e22cee170b40187b5cd5f/foto/Front.PNG)
 * Possui um barramento de Micro Serviços e 2 serviços
-* Os MicroS tem o intuito de simular o comportamento do Hardware do nosso outro projeto de Micro Controladores e Sistemas Embarcados ![alt text](https://github.com/NULLBYTE-RGH/Microcontroladores-e-Sistemas-Embarcados), o qual faz uso de 2 microControladores, 1 para gerenciar os perifeicos como:
+* Os MicroS tem o intuito de simular o comportamento do Hardware do nosso outro projeto de Micro Controladores e Sistemas Embarcados ![Repositorio](https://github.com/NULLBYTE-RGH/Microcontroladores-e-Sistemas-Embarcados), o qual faz uso de 2 microControladores, 1 para gerenciar os perifeicos como:
 ###### [X] Leitor de Digital
 ###### [X] RFID 
 ###### [X] Teclado numerico
