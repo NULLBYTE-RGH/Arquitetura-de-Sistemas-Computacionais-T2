@@ -3,7 +3,7 @@
 * Feita em React com bootstrap
 * Possui um barramento de Micro Serviços e 2 serviços
 * Os MicroS tem o intuito de simular o comportamento do Hardware do nosso outro projeto de Micro Controladores e Sistemas Embarcados, o qual faz uso de 2 microControladores, 1 para gerenciar os perifeicos como:
-######  ] Leitor de Digital
+###### [ ] Leitor de Digital
 ###### [ ] RFID 
 ###### [ ] Teclado numerico
 ###### [ ] Giroscopio com acelerometro, para detectar arrombamento
