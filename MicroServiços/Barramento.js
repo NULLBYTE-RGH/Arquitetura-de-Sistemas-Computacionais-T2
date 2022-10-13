@@ -86,3 +86,14 @@ app.get("/TRANC", (req, res) => {
         res.sendStatus(200);
       });
   });
+
+  app.post("/GET", (req, res) => {
+    axios
+      .post(Cadastro)
+      .then((res) => {
+        return res.data;
+      })
+      .then((resposta) => {
+        res.send(resposta);
+      });
+  });
