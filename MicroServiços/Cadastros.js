@@ -45,9 +45,11 @@ app.post('/usuarios', (req, res) => {
 
     enviar.map(i=>{
         i = JSON.parse(i)
-        if(i.senha == ""){i.senha= undefined}
-        if(i.rfid == ""){i.rfid= undefined}
-        if(i.digital == ""){i.digital= undefined}
+        if(i.ultimo === undefined){
+        if(i.senha == ""){i.senha= undefined}else{i.senha = "*"}
+        if(i.rfid == ""){i.rfid= undefined}else{i.rfid = "*"}
+        if(i.digital == ""){i.digital= undefined}else{i.digital = "*"}
+        }
         limpo.push(i)
     }
         )
