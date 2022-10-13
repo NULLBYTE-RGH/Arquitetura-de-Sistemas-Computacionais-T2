@@ -24,6 +24,8 @@
 
 [X] http://127.0.0.1:5000/GET -> para recebimento dos usuarios com senhas e ids (não deve ser utilizado pelo front por questao de segurança dos dados, é apenas para uso interno e autenticação entre os MiroSrviços)
 
++ A variavel Usuarios, dentro de Cadastro.js, esta formatada de maneira errada o Json, pois é a forma como chega ao ser trasmitida via UART no sistema real, e por conta disso foi decidido fazer o tratamento posterior deixando o "Json" em sua forma original de recebimento.
++ 
 * Ao se fazer a requisição para esse endereço via metodo *GET* é retornado a lista completa do banco de dados, isso inclui nomes, senhas etc.
 * Com metodo *POST*, o Json retornado contem as mesmas partes que o riginal, porem, as senhas,IDs, e outras formas de autenticações sao substituidas por um vazio ('')
 
