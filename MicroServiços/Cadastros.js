@@ -20,9 +20,53 @@ app.listen(porta, () => {
     console.log(`na porta ${porta}`)
 })
 
+//envios dos usuarios com senhas e indentificaçoes limpas para o front
+app.post('/usuarios', (req, res) => {
+    limpo = []
+    //essa limpeza esta sendo feita a cada requisição, pois no projeto real com o microcontrolador esses lixos aparecem durante a conec serial via UART
+    console.log("chegou requisição POST usuarios limpos")
+    enviar = Usuarios[0].concat(Ultimo_Acesso).split("},")
+    enviar = enviar.map(item=>{
+        item = item.includes("}") ? item : item.concat("}")
+        item = item.replaceAll("'", '"')
+        item = item.replaceAll(",,", ",");
+        item = item.replaceAll("::", ":");
+        item = item.replaceAll("{{", "{");
+        return item
+    })
+
+    enviar.map(i=>{
+        i = JSON.parse(i)
+        i.senha= ""
+        i.rfid=""
+        i.digital=""
+        limpo.push(i)
+    }
+        )
+
+    //console.log(enviar.map(i=>{console.log(i)}))
+    enviar = limpo
+    res.send(enviar)
+})
+
 app.get('/usuarios', (req, res) => {
-    console.log("chegou")
-    res.send([Usuarios[0].concat(Ultimo_Acesso)])
+
+    limpo = []
+
+    console.log("chegou requisição GET usuarios limpos")
+    //essa limpeza esta sendo feita a cada requisição, pois no projeto real com o microcontrolador esses lixos aparecem durante a conec serial via UART
+    enviar = Usuarios[0].concat(Ultimo_Acesso).split("},")
+    enviar = enviar.map(item=>{
+        item = item.includes("}") ? item : item.concat("}")
+        item = item.replaceAll("'", '"')
+        item = item.replaceAll(",,", ",");
+        item = item.replaceAll("::", ":");
+        item = item.replaceAll("{{", "{");
+        limpo.push(item)
+    })
+
+    enviar = limpo
+    res.send(enviar)
 })
 
 app.post('/adicionar', (req, res) => {
