@@ -1,6 +1,7 @@
 # Projeto Fechadura SMART
 
 * Feita em React com bootstrap
+![alt text](https://github.com/NULLBYTE-RGH/Arquitetura-de-Sistemas-Computacionais-T2/blob/92e824de3a616be7479e22cee170b40187b5cd5f/foto/Front.PNG)
 * Possui um barramento de Micro Serviços e 2 serviços
 * Os MicroS tem o intuito de simular o comportamento do Hardware do nosso outro projeto de Micro Controladores e Sistemas Embarcados, o qual faz uso de 2 microControladores, 1 para gerenciar os perifeicos como:
 ###### [X] Leitor de Digital
@@ -27,8 +28,6 @@
 * Com metodo POST, o Json retornado contem as mesmas partes que o riginal, porem, as senhas,IDs, e outras formas de autenticações sao substituidas por um vazio ('')
 
 [X] http://127.0.0.1:5000/ADD -> feito para cadastramento de usuarios novos ao banco de dados, o envio deve ser um Json, contendo (Nome,ID,SENHA,RFID,DIGITAL), no caso da fechadura real, tanto o RFID como a a Digital sao codigos templates, no RFID representa o codigo contido no cartao, e na Digital, representa o id da digital salva internamente no leitor.
-
-![alt text](https://github.com/NULLBYTE-RGH/Arquitetura-de-Sistemas-Computacionais-T2/blob/92e824de3a616be7479e22cee170b40187b5cd5f/foto/Front.PNG)
 
 [X] http://127.0.0.1:5000/DEST -> Utilizado para o destravamento da fechadura, deve ser utilizado mandando um JSON, contendo o nome do usuario e uma das maneiras de autenticação, podendo ser Senha, RFID ou digital.
 
