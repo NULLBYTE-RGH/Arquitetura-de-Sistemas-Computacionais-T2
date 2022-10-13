@@ -3,13 +3,13 @@
 * Feita em React com bootstrap
 * Possui um barramento de Micro Serviços e 2 serviços
 * Os MicroS tem o intuito de simular o comportamento do Hardware do nosso outro projeto de Micro Controladores e Sistemas Embarcados, o qual faz uso de 2 microControladores, 1 para gerenciar os perifeicos como:
-[ ] Leitor de Digital
-[ ] RFID 
-[ ] Teclado numerico
-[ ] Giroscopio com acelerometro, para detectar arrombamento
-[ ] Visor Oled
-[ ] comunicação serial com o outro Microcontrolador ESP32 via UART
-[ ] abertura e fechamento do solenoid
+###  ] Leitor de Digital
+### [ ] RFID 
+### [ ] Teclado numerico
+### [ ] Giroscopio com acelerometro, para detectar arrombamento
+### [ ] Visor Oled
+### [ ] comunicação serial com o outro Microcontrolador ESP32 via UART
+### [ ] abertura e fechamento do solenoid
 
 *Já o ESP32 teria a função defornecer ao front as funcionalidades e informações, por meio de atuação como um ponto de acesso e envio de JSONs, nesse caso representado pelo Micro serviço Cadastros.js
 
