@@ -28,6 +28,8 @@
 
 [X] http://127.0.0.1:5000/ADD -> feito para cadastramento de usuarios novos ao banco de dados, o envio deve ser um Json, contendo (Nome,ID,SENHA,RFID,DIGITAL), no caso da fechadura real, tanto o RFID como a a Digital sao codigos templates, no RFID representa o codigo contido no cartao, e na Digital, representa o id da digital salva internamente no leitor.
 
+![alt text](https://github.com/NULLBYTE-RGH/Arquitetura-de-Sistemas-Computacionais-T2/blob/92e824de3a616be7479e22cee170b40187b5cd5f/foto/Front.PNG)
+
 [X] http://127.0.0.1:5000/DEST -> Utilizado para o destravamento da fechadura, deve ser utilizado mandando um JSON, contendo o nome do usuario e uma das maneiras de autenticação, podendo ser Senha, RFID ou digital.
 
 [X] http://127.0.0.1:5000/TRANC -> Utilizado para o travamento da fechadura, na fechadura real, isso nao cabe ao front, o controlador que gerencia o tempo de abertura, pois como a abertura é feita por meio de um solenoid, o mesmo consome muita corrente, e caso permaneça muito tempo aberto causara danos ao sistema. no caso da simulação o gerenciamento é feito no proprio front, esperando 3 segundos antes de mandar a requisição de fechamento.
