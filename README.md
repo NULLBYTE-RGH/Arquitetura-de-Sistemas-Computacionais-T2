@@ -27,7 +27,7 @@
 + ***A variavel Usuarios, dentro de Cadastro.js, esta com o Json formatado de maneira errada, pois é a forma como chega ao ser trasmitida via UART no sistema real, e por conta disso foi decidido fazer o tratamento posterior deixando o "Json" em sua forma original de recebimento.***
 
 * Ao se fazer a requisição para esse endereço via metodo *GET* é retornado a lista completa do banco de dados, isso inclui nomes, senhas etc.
-* Com metodo *POST*, o Json retornado contem as mesmas partes que o riginal, porem, as senhas,IDs, e outras formas de autenticações sao substituidas por um vazio ('')
+* Com metodo *POST*, o Json retornado contem as mesmas partes que o riginal, porem, as senhas,IDs, e outras formas de autenticações sao substituidas por um * ('*')
 
 [X] http://127.0.0.1:5000/ADD -> feito para cadastramento de usuarios novos ao banco de dados, o envio deve ser um Json, contendo (Nome,ID,SENHA,RFID,DIGITAL), no caso da fechadura real, tanto o RFID como a a Digital sao codigos templates, no RFID representa o codigo contido no cartao, e na Digital, representa o id da digital salva internamente no leitor.
 
