@@ -34,3 +34,9 @@
 [X] http://127.0.0.1:5000/TRANC -> Utilizado para o travamento da fechadura, na fechadura real, isso nao cabe ao front, o controlador que gerencia o tempo de abertura, pois como a abertura é feita por meio de um solenoid, o mesmo consome muita corrente, e caso permaneça muito tempo aberto causara danos ao sistema. no caso da simulação o gerenciamento é feito no proprio front, esperando 3 segundos antes de mandar a requisição de fechamento.
 
 [X] http://127.0.0.1:5000/ULT -> Feito para utilização interna entre os Serviçoes para alertar quem foi o ultimo a desbloquear a fechadura, por meio de um JSON contendo o nome da pessoa.
+
+## Uso:
+- Inicar o Brramento  dentro da pasta Microsrviços/Barramento.js com o comando (node ./Barramento.js)
+- Inicar o MicroServiço Cadastro dentro da pasta Microsrviços/Cadastro.js com o comando (node ./Cadastro.js)
+- Inicar o MicroServiço Fechadura dentro da pasta Microsrviços/Fechadura.js com o comando (node ./Fechadura.js)
+- Iniciar o servidor React dentro da pasta Raiz, com o comando (npm start)
