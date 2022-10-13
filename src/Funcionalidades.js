@@ -37,34 +37,14 @@ class Funcionalidades extends React.Component {
     this.Json = [];
 
     this.setState({ Json3: [] });
-    axios.get(this.servico).then((res) => {
-      this.Json = res.data;
-      console.log(this.Json);
-      if (this.Json.lengh < 1) {
+    axios.post(this.servico).then((res) => {
+      this.Json2 = res.data;
+      //console.log(this.Json2);
+      if (this.Json2.lengh < 1) {
         this.setState({ estado_conexao: false });
       } else {
         this.setState({ estado_conexao: true });
       }
-
-      this.Json = this.Json[0].split("},");
-      this.Json.map((item) => {
-        this.Json2.push(item.includes("}") ? item : item.concat("}"));
-        return 0;
-      });
-      this.Json = [];
-      this.Json2.map((item) => {
-        this.Json.push(item.replaceAll("'", '"'));
-        return 0;
-      });
-      this.Json2 = [];
-      this.Json.map((item) => {
-        item = item.replaceAll(",,", ",");
-        item = item.replaceAll("::", ":");
-        item = item.replaceAll("{{", "{");
-        this.Json2.push(JSON.parse(item));
-        return 0;
-      });
-
       //Separação das autenticações Cadastradas
 
       let Contador0 = 0;
