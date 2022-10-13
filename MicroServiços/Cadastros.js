@@ -12,7 +12,7 @@ app.use(function (req, res, next) {
     next();
 },express.json());
 
-Usuarios = ["{'senha': '1111', 'rfid': '1485898912', 'digital': '0', 'id': '1', 'nome': 'joao'}, {'senha': '2222', 'rfid': '20442135750', 'digital': '0', 'id': '2', 'nome': 'matheus'},  {'senha': '123', 'rrfid': '0', 'digitall': '2', 'id': '3',  'nome': 'marcel'},  {'senha': '123', 'rrfid': '0', 'digitall': '3', 'id': '4',  'nome': 'C'}, {'sennha': '123', 'rfid':: '0', 'digital': '44', 'id': '5', 'nomee': 'D'}, {'senha':  '123', 'rfid': '0',, 'digital': '5', 'iid': '6', 'nome': 'EE'}, {'senha': '123', 'rfid': '0', 'diggital': '6', 'id': '7', 'nome': 'F'}, {{'senha': '123', 'rffid': '0', 'digital': '7', 'id': '8', 'nome': 'G'}"]
+Usuarios = ["{'senha': '1111', 'rfid': '1485898912', 'digital': '0', 'id': '1', 'nome': 'joao'}, {'senha': '2222', 'rfid': '20442135750', 'digital': '', 'id': '2', 'nome': 'matheus'},  {'senha': '123', 'rrfid': '', 'digitall': '2', 'id': '3',  'nome': 'marcel'},  {'senha': '123', 'rrfid': '', 'digitall': '3', 'id': '4',  'nome': 'C'}, {'sennha': '123', 'rfid':: '', 'digital': '44', 'id': '5', 'nomee': 'D'}, {'senha':  '123', 'rfid': '',, 'digital': '5', 'iid': '6', 'nome': 'EE'}, {'senha': '123', 'rfid': '', 'diggital': '6', 'id': '7', 'nome': 'F'}, {{'senha': '123', 'rffid': '', 'digital': '7', 'id': '8', 'nome': 'G'}"]
 Ultimo_Acesso=", {'ultimo': ''}"
 
 app.listen(porta, () => {
@@ -32,14 +32,22 @@ app.post('/usuarios', (req, res) => {
         item = item.replaceAll(",,", ",");
         item = item.replaceAll("::", ":");
         item = item.replaceAll("{{", "{");
+        item = item.replaceAll(",,", ',')
+        item = item.replaceAll("ee", 'e')
+        item = item.replaceAll("ii", 'i')
+        item = item.replaceAll("nn", 'n')
+        item = item.replaceAll("rr", 'r')
+        item = item.replaceAll("ff", 'f')
+        item = item.replaceAll("ll", 'l')
+        item = item.replaceAll("gg", 'g')
         return item
     })
 
     enviar.map(i=>{
         i = JSON.parse(i)
-        i.senha= ""
-        i.rfid=""
-        i.digital=""
+        if(i.senha == ""){i.senha= undefined}
+        if(i.rfid == ""){i.rfid= undefined}
+        if(i.digital == ""){i.digital= undefined}
         limpo.push(i)
     }
         )
