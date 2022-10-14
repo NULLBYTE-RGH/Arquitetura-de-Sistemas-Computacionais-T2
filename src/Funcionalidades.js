@@ -20,8 +20,7 @@ class Funcionalidades extends React.Component {
   audio = new Audio(sound);
   //IP ESP32
   IP_AP = "127.0.0.1";
-  Porta = 5000;
-  Porta_Ouvir = 9000;
+  Porta = 5000; // porta do Barramento
   servico = `http://${this.IP_AP}:${this.Porta}/GET`;
   Trancar = `http://${this.IP_AP}:${this.Porta}/TRANC`;
   Destrancar = `http://${this.IP_AP}:${this.Porta}/DEST`;
@@ -39,7 +38,7 @@ class Funcionalidades extends React.Component {
     this.setState({ Json3: [] });
     axios.post(this.servico).then((res) => {
       this.Json2 = res.data;
-      //console.log(this.Json2);
+      //console.log(this.Json2); DEBUG
       if (this.Json2.lengh < 1) {
         this.setState({ estado_conexao: false });
       } else {
@@ -115,7 +114,7 @@ class Funcionalidades extends React.Component {
     if (this.state.estado_conexao) {
       let json = `{"nome":"${this.state.usuario.toString()}", "senha":"${this.state.senha.toString()}"}`;
       json = JSON.parse(json);
-      console.log(json);
+      //console.log(json); DEBUG
       axios
         .post(this.Destrancar, json)
         .then((res) => {
