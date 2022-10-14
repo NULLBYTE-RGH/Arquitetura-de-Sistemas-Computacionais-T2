@@ -12,6 +12,8 @@
 ###### [X] comunicação serial com o outro Microcontrolador ESP32 via UART
 ###### [X] abertura e fechamento do solenoid
 
+![Trilhas](https://github.com/NULLBYTE-RGH/Microcontroladores-e-Sistemas-Embarcados/blob/734ec019039ff5427eab8e21dd8d972c1e32a424/foto/Esquematico.png)
+
 * Já o outro teria a função de fornecer ao front as funcionalidades e informações, por meio de atuação como um ponto de acesso WIFI e envio de JSONs, nesse caso representado pelo Micro serviço Cadastros.js
 
 * O Front faz atualizaçoes constantes sobre o estado da fechadura por meio de chamadas de conexao com o barramento a cada 1 segundo. Recebendo numero de usuarios cadastrados,nomes e tipos de autenticações. Juntamente com o nome do ultimo usuario a desbloquear a fechadura.
