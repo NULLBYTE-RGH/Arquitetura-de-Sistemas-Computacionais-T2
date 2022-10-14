@@ -15,18 +15,8 @@ app.use(function (req, res, next) {
 Usuarios = ["{'senha': '1111', 'rfid': '1485898912', 'digital': '0', 'id': '1', 'nome': 'joao'}, {'senha': '2222', 'rfid': '20442135750', 'digital': '', 'id': '2', 'nome': 'matheus'},  {'senha': '123', 'rrfid': '', 'digitall': '2', 'id': '3',  'nome': 'marcel'},  {'senha': '123', 'rrfid': '', 'digitall': '3', 'id': '4',  'nome': 'C'}, {'sennha': '123', 'rfid':: '', 'digital': '44', 'id': '5', 'nomee': 'D'}, {'senha':  '123', 'rfid': '',, 'digital': '5', 'iid': '6', 'nome': 'EE'}, {'senha': '123', 'rfid': '', 'diggital': '6', 'id': '7', 'nome': 'F'}, {{'senha': '123', 'rffid': '', 'digital': '7', 'id': '8', 'nome': 'G'}"]
 Ultimo_Acesso=", {'ultimo': ''}"
 
-app.listen(porta, () => {
-    console.log(`Iniciado Cadastro`)
-    console.log(`na porta ${porta}`)
-})
-
-//envios dos usuarios com senhas e indentificaçoes limpas para o front
-app.post('/usuarios', (req, res) => {
-    limpo = []
-    //essa limpeza esta sendo feita a cada requisição, pois no projeto real com o microcontrolador esses lixos aparecem durante a conec serial via UART
-    console.log("chegou requisição POST usuarios limpos")
-    enviar = Usuarios[0].concat(Ultimo_Acesso).split("},")
-    enviar = enviar.map(item=>{
+function limpar(lista){
+    lista = lista.map(item=>{
         item = item.includes("}") ? item : item.concat("}")
         item = item.replaceAll("'", '"')
         item = item.replaceAll(",,", ",");
@@ -42,6 +32,21 @@ app.post('/usuarios', (req, res) => {
         item = item.replaceAll("gg", 'g')
         return item
     })
+    return lista
+}
+
+app.listen(porta, () => {
+    console.log(`Iniciado Cadastro`)
+    console.log(`na porta ${porta}`)
+})
+
+//envios dos usuarios com senhas e indentificaçoes limpas para o front
+app.post('/usuarios', (req, res) => {
+    limpo = []
+    //essa limpeza esta sendo feita a cada requisição, pois no projeto real com o microcontrolador esses lixos aparecem durante a conec serial via UART
+    console.log("POST usuarios")
+    enviar = Usuarios[0].concat(Ultimo_Acesso).split("},")
+    enviar = limpar(enviar)
 
     enviar.map(i=>{
         i = JSON.parse(i)
@@ -53,44 +58,30 @@ app.post('/usuarios', (req, res) => {
         limpo.push(i)
     }
         )
-
-    //console.log(enviar.map(i=>{console.log(i)}))
     enviar = limpo
     res.send(enviar)
 })
 
 app.get('/usuarios', (req, res) => {
-
-    limpo = []
-
-    console.log("chegou requisição GET usuarios limpos")
+    console.log("GET usuarios")
     //essa limpeza esta sendo feita a cada requisição, pois no projeto real com o microcontrolador esses lixos aparecem durante a conec serial via UART
     enviar = Usuarios[0].concat(Ultimo_Acesso).split("},")
-    enviar = enviar.map(item=>{
-        item = item.includes("}") ? item : item.concat("}")
-        item = item.replaceAll("'", '"')
-        item = item.replaceAll(",,", ",");
-        item = item.replaceAll("::", ":");
-        item = item.replaceAll("{{", "{");
-        limpo.push(item)
-    })
-
-    enviar = limpo
+    enviar = limpar(enviar)
     res.send(enviar)
 })
 
 app.post('/adicionar', (req, res) => {
-    console.log(req.body.data)
+    //console.log(req.body.data)
     Usuarios = [Usuarios[0].concat(`, ${JSON.stringify(req.body.data)}`)]
     res.sendStatus(200)
 })
 
 app.post('/ultimo', (req, res) => {
-    console.log(req.body.data)
-    console.log(req.body.data.data)
+    // console.log(req.body.data)
+    // console.log(req.body.data.data)
     Acesso = ''
     if(req.body.data.data===undefined){Acesso = ''}else{Acesso =  req.body.data.data}
     Ultimo_Acesso = `, {'ultimo': '${Acesso}'}`
-    console.log(Ultimo_Acesso)
+    //console.log(Ultimo_Acesso)
     res.sendStatus(200)
 })
