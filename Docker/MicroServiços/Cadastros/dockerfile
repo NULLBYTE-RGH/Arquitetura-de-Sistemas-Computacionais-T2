@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:16.14.2
 
 RUN mkdir -p /usr/src/app
 
@@ -10,7 +10,7 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 7000
+EXPOSE 7000 
 
 CMD ["node", "Cadastros.js"] 
 
