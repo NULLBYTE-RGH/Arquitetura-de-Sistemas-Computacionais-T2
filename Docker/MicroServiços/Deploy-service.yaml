@@ -1,0 +1,14 @@
+
+apiVersion: app/v1
+kind: Service
+metadata:
+  name: Deploy-service
+spec:
+  selector:
+    app: Deploy-service
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 7000
+    targetPort: 4422
+    nodePort: 31110
