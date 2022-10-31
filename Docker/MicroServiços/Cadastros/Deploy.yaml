@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: MicroServico-Cadastros
+spec:
+  selector:
+    matchLabels:
+      app: MicroServico-Cadastros
+  template:
+    metadata:
+      labels:
+        app: MicroServico-Cadastros
+    spec:
+      containers:
+      - name: MicroServico-Cadastros
+        image: //Adicionar a imagem do container
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 7000

@@ -1,0 +1,14 @@
+
+apiVersion: app/v1
+kind: Service
+metadata:
+  name: Deploy-service-Cadastros
+spec:
+  selector:
+    app: Deploy-service-Cadastros
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 7000
+    targetPort: 7000
+    nodePort: 31111
