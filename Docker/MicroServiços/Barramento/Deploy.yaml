@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: MicroServico-Barramento
+spec:
+  selector:
+    matchLabels:
+      app: MicroServico-Barramento
+  template:
+    metadata:
+      labels:
+        app: MicroServico-Barramento
+    spec:
+      containers:
+      - name: MicroServico-Barramento
+        image: //Adicionar a imagem do container
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5000
