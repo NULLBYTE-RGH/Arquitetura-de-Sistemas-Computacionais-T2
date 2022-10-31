@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: MicroServico-Fechadura
+spec:
+  selector:
+    matchLabels:
+      app: MicroServico-Fechadura
+  template:
+    metadata:
+      labels:
+        app: MicroServico-Fechadura
+    spec:
+      containers:
+      - name: MicroServico-Fechadura
+        image: //Adicionar a imagem do container
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 9000
