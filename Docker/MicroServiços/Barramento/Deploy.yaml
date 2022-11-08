@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: MicroServico-Barramento
+  name: microservico-barramento
 spec:
   selector:
     matchLabels:
-      app: MicroServico-Barramento
+      app: microservico-barramento
   template:
     metadata:
       labels:
-        app: MicroServico-Barramento
+        app: microservico-barramento
     spec:
       containers:
-      - name: MicroServico-Barramento
-        image: //Adicionar a imagem do container
+      - name: microservico-barramento
+        image: barramento
         resources:
           limits:
             memory: "128Mi"
