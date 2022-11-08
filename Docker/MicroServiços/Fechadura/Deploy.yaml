@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: MicroServico-Fechadura
+  name: microservico-fechadura
 spec:
   selector:
     matchLabels:
-      app: MicroServico-Fechadura
+      app: microservico-fechadura
   template:
     metadata:
       labels:
-        app: MicroServico-Fechadura
+        app: microservico-fechadura
     spec:
       containers:
-      - name: MicroServico-Fechadura
-        image: //Adicionar a imagem do container
+      - name: microservico-fechadura
+        image: fechadura
         resources:
           limits:
             memory: "128Mi"
