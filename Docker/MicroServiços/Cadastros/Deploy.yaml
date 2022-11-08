@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: MicroServico-Cadastros
+  name: microservico-cadastros
 spec:
   selector:
     matchLabels:
-      app: MicroServico-Cadastros
+      app: microservico-cadastros
   template:
     metadata:
       labels:
-        app: MicroServico-Cadastros
+        app: microservico-cadastros
     spec:
       containers:
-      - name: MicroServico-Cadastros
-        image: //Adicionar a imagem do container
+      - name: microservico-cadastros
+        image: cadastros
         resources:
           limits:
             memory: "128Mi"
