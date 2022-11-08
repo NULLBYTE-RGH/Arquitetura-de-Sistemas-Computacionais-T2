@@ -1,14 +1,11 @@
-
-apiVersion: app/v1
+apiVersion: v1
 kind: Service
 metadata:
-  name: Deploy-service-Fechadura
+  name: deploy-service-fechadura
 spec:
   selector:
-    app: Deploy-service-Fechadura
-  type: LoadBalancer
+    app: microservico-fechadura
   ports:
   - protocol: TCP
     port: 9000
     targetPort: 9000
-    nodePort: 31112
