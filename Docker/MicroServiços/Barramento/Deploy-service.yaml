@@ -1,14 +1,13 @@
-
-apiVersion: app/v1
+apiVersion: v1
 kind: Service
 metadata:
-  name: Deploy-service-Barramento
+  name: deploy-service-barramento
 spec:
   selector:
-    app: Deploy-service-Barramento
-  type: LoadBalancer
+    app: microservico-barramento
   ports:
   - protocol: TCP
     port: 5000
     targetPort: 5000
-    nodePort: 31110
+    nodeport: 31110
+  type: LoadBalancer
