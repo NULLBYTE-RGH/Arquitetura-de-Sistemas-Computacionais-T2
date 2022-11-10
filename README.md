@@ -44,3 +44,18 @@
 - Inicar o MicroServiço *Cadastro* dentro da pasta MicroServiços/Cadastro.js com o comando (node ./Cadastro.js)
 - Inicar o MicroServiço *Fechadura* dentro da pasta MicroServiços/Fechadura.js com o comando (node ./Fechadura.js)
 - Iniciar o servidor React dentro da pasta Raiz, com o comando (npm start)
+
+### Docker e Kubernetes:
+
+- barramento
+docker build -t barramento:novo .
+kubectl create deployment deploy.yaml --image=barramento:novo
+
+- cadastros
+docker build -t cadastro:novo .
+kubectl create deployment cadastro --image=cadastro:novo 
+
+- fechadura
+docker build -t fechadura:novo .
+kubectl create deployment fechadura --image=fechadura:novo
+
