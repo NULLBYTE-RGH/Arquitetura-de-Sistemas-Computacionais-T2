@@ -14,9 +14,19 @@ spec:
       containers:
       - name: microservico-barramento
         image: barramento
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
         - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: deploy-service-barramento
+spec:
+  selector:
+    app: microservico-barramento
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
+    nodePort: 31110
