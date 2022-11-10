@@ -48,14 +48,14 @@
 ### Docker e Kubernetes:
 
 - barramento
-docker build -t barramento:novo .
-kubectl create deployment deploy.yaml --image=barramento:novo
-
+- docker build -t barramento:novo .
+- kubectl create deployment deploy.yaml --image=barramento:novo
+----------------------------------------------------------------
 - cadastros
-docker build -t cadastro:novo .
-kubectl create deployment cadastro --image=cadastro:novo 
-
+- docker build -t cadastro:novo .
+- kubectl create deployment cadastro --image=cadastro:novo 
+----------------------------------------------------------------
 - fechadura
-docker build -t fechadura:novo .
-kubectl create deployment fechadura --image=fechadura:novo
+- docker build -t fechadura:novo .
+- kubectl create deployment fechadura --image=fechadura:novo
 
