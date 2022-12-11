@@ -1,5 +1,7 @@
 João Vitor Sarti 18.01224-8 -> Criação de Micro Serviços, Barramento e Front @NULLBYTE-RGH
 
-Marcel Marques Caceres 17.00648-0 -> 
+Marcel Marques Caceres 17.00648-0 -> Docker
 
 Matheus Rossini de Souza 18.01060-0 -> Criação de Scripts Docker
+
+Guilherme Costa e Souza 19.00065-0 -> Docker
